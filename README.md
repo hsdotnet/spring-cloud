@@ -9,7 +9,7 @@
 5. 服务负载:feign+ribbon
 6. api文档输出:swagger2
 7. 链路跟踪:spring cloud sletuh ->zipkin
-8. 安全认证:JWT
+8. 安全认证:jwt
 9. 服务监控:spring-boot-admin
 
 # 各模块介绍
