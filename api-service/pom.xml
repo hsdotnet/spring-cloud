@@ -6,7 +6,6 @@
     <modules>
         <module>order-service</module>
         <module>base-service</module>
-        <module>product-service</module>
     </modules>
 
     <parent>

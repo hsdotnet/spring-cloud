@@ -12,8 +12,6 @@
       <module fileurl="file://$PROJECT_DIR$/mall/mall.iml" filepath="$PROJECT_DIR$/mall/mall.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-api/mall-api.iml" filepath="$PROJECT_DIR$/mall-api/mall-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-service/order-service/order-service.iml" filepath="$PROJECT_DIR$/api-service/order-service/order-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/api-service/product-service/product-service.iml" filepath="$PROJECT_DIR$/api-service/product-service/product-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/product-service/product-service.iml" filepath="$PROJECT_DIR$/product-service/product-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-server/turbine-server/turbine-server.iml" filepath="$PROJECT_DIR$/base-server/turbine-server/turbine-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-server/zipkin-server/zipkin-server.iml" filepath="$PROJECT_DIR$/base-server/zipkin-server/zipkin-server.iml" />
