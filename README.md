@@ -2,7 +2,7 @@
 基于SpringCloud Finchley.RELEASE 
 
 组件：
-1. 服务注册、发现: eureka  后期提供consul
+1. 服务注册、发现: eureka
 2. 配置管理:spring config 
 3. 集群容错: hystrix
 4. API网关: zuul
