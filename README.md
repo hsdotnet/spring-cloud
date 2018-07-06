@@ -1,5 +1,5 @@
 # QuickStart
-基于SpringCloud体系
+基于SpringCloud Finchley.RELEASE 
 
 组件：
 1. 服务注册、发现: eureka  后期提供consul
