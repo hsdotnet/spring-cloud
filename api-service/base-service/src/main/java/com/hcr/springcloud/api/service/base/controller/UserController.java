@@ -11,17 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @PostMapping("/info")
-    public UserDTO getUserInfo(String userName, String password) {
+    public Result<UserDTO> getUserInfo(String userName, String password) {
         if (userName.equals("admin") && password.equals("123456")) {
             UserDTO dto = new UserDTO();
             dto.setUserName(userName);
             dto.setPassword(password);
             dto.setUserId(10);
-            //return Result.success(dto);
-            return dto;
+            return Result.success(dto);
         } else {
-            //return Result.error("用户名或者密码错误");
-            return null;
+            return Result.error("用户名或者密码错误");
         }
     }
 }
