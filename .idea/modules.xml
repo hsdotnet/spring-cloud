@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base-server/admin-server/admin-server.iml" filepath="$PROJECT_DIR$/base-server/admin-server/admin-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-server/base-server.iml" filepath="$PROJECT_DIR$/base-server/base-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-server/config-server/config-server.iml" filepath="$PROJECT_DIR$/base-server/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-server/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/base-server/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mall/mall.iml" filepath="$PROJECT_DIR$/mall/mall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product-service/product-service.iml" filepath="$PROJECT_DIR$/product-service/product-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-server/turbine-server/turbine-server.iml" filepath="$PROJECT_DIR$/base-server/turbine-server/turbine-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-server/zipkin-server/zipkin-server.iml" filepath="$PROJECT_DIR$/base-server/zipkin-server/zipkin-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-server/zuul-server/zuul-server.iml" filepath="$PROJECT_DIR$/base-server/zuul-server/zuul-server.iml" />
+    </modules>
+  </component>
+</project>

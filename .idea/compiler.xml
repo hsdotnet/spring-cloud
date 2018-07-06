@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="admin-server" />
+        <module name="config-server" />
+        <module name="eureka-server" />
+        <module name="mall" />
+        <module name="product-service" />
+        <module name="turbine-server" />
+        <module name="zipkin-server" />
+        <module name="zuul-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="admin-server" target="1.8" />
+      <module name="base-server" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="mall" target="1.8" />
+      <module name="product-service" target="1.8" />
+      <module name="springcloud" target="1.8" />
+      <module name="turbine-server" target="1.8" />
+      <module name="zipkin-server" target="1.8" />
+      <module name="zuul-server" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
