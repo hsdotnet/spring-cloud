@@ -7,6 +7,8 @@ import com.hcr.springcloud.mall.api.dto.UserDTO;
 import com.hcr.springcloud.mall.api.service.UserService;
 import com.hcr.springcloud.mall.api.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,7 +21,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public Result<String> login(String userName, String password) {
         String url = "http://BASE-SERVICE/user/info?userName=" + userName + "&password=" + password;
-        Result<UserDTO> result = restTemplateConfig.getRestTemplate().postForObject(url, null, Result.class);
+        Result<UserDTO> result = restTemplateConfig.getRestTemplate().exchange(url,
+                HttpMethod.POST, null, new ParameterizedTypeReference<Result<UserDTO>>() {
+                }).getBody();
         if (result.getCode() == 0) {
             UserDTO user = result.getData();
 

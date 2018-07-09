@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-server/config-server/config-server.iml" filepath="$PROJECT_DIR$/base-server/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/base-server/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/base-server/eureka-server/eureka-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mall/mall.iml" filepath="$PROJECT_DIR$/mall/mall.iml" />
       <module fileurl="file://$PROJECT_DIR$/mall-api/mall-api.iml" filepath="$PROJECT_DIR$/mall-api/mall-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-service/order-service/order-service.iml" filepath="$PROJECT_DIR$/api-service/order-service/order-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloud.iml" filepath="$PROJECT_DIR$/springcloud.iml" />

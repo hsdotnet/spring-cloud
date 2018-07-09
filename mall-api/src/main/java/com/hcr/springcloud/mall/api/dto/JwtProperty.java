@@ -2,9 +2,10 @@ package com.hcr.springcloud.mall.api.dto;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@ConfigurationProperties(prefix = "jwt")
 @Configuration
+@ConfigurationProperties(prefix = "jwt")
 public class JwtProperty {
     private String clientId;
     private String base64Secret;

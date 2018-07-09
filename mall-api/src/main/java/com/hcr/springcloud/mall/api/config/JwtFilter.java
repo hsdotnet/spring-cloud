@@ -1,9 +1,6 @@
 package com.hcr.springcloud.mall.api.config;
 
 import com.hcr.springcloud.mall.api.dto.JwtProperty;
-import com.hcr.springcloud.mall.api.util.JwtUtil;
-import io.jsonwebtoken.Claims;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -17,40 +14,50 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class JwtFilter extends GenericFilterBean {
-    @Autowired
-    private JwtProperty jwtProperty;
+
+    private final JwtProperty jwtProperty;
+
+    public JwtFilter(JwtProperty jwtProperty) {
+        super();
+        this.jwtProperty = jwtProperty;
+    }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
             throws IOException, ServletException {
-        HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
-        HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        if ("OPTIONS".equals(httpRequest.getMethod())) {
-            httpResponse.setStatus(HttpServletResponse.SC_OK);
-            filterChain.doFilter(httpRequest, httpResponse);
+        if ("OPTIONS".equals(request.getMethod())) {
+            response.setStatus(HttpServletResponse.SC_OK);
+            chain.doFilter(servletRequest, servletResponse);
         }
 
-        String url = httpRequest.getRequestURI().substring(httpRequest.getContextPath().length());
+        String url = request.getRequestURI().substring(request.getContextPath().length());
+
+        System.out.println(url);
 
         if (isInclude(url)) {
             //如果是属于排除的URL，比如登录，注册，验证码等URL，则直接通行
-            httpResponse.setStatus(HttpServletResponse.SC_OK);
-            filterChain.doFilter(httpRequest, httpResponse);
+            response.setStatus(HttpServletResponse.SC_OK);
+            chain.doFilter(servletRequest, servletResponse);
         }
 
-        String token = httpRequest.getHeader("token");
+        String token = request.getHeader("token");
 
         if ((token != null) && (token.length() > 7)) {
             String HeadStr = token.substring(0, 6).toLowerCase();
             if (HeadStr.compareTo("bearer") == 0) {
                 token = token.substring(7, token.length());
-                Claims claims = JwtUtil.parseJWT(token, jwtProperty.getBase64Secret());
-                if (claims != null) {
-                    System.out.println(claims);
-                }
+                System.out.println(token);
+                //Claims claims = JwtUtil.parseJWT(token, jwtProperty.getBase64Secret());
+                //if (claims != null) {
+                // System.out.println(claims);
+                //}
             }
         }
+
+        chain.doFilter(servletRequest, servletResponse);
     }
 
     /**
@@ -60,12 +67,15 @@ public class JwtFilter extends GenericFilterBean {
      * @return
      */
     private boolean isInclude(String url) {
-        String[] excludeUrls = jwtProperty.getExcludeUrl().split(",");
-        for (String patternUrl : excludeUrls) {
-            Pattern p = Pattern.compile(patternUrl);
-            Matcher m = p.matcher(url);
-            if (m.find()) {
-                return true;
+        String excludeUrl = jwtProperty.getExcludeUrl();
+        if (excludeUrl != null) {
+            String[] excludeUrls = excludeUrl.split(",");
+            for (String patternUrl : excludeUrls) {
+                Pattern p = Pattern.compile(patternUrl);
+                Matcher m = p.matcher(url);
+                if (m.find()) {
+                    return true;
+                }
             }
         }
         return false;

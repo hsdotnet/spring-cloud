@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>base-server</module>
-        <module>mall</module>
         <module>api-service</module>
         <module>mall-api</module>
         <module>common</module>
