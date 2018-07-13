@@ -1,17 +1,8 @@
 package com.hcr.springcloud.mall.api.dto;
 
-public class UserDTO {
-    private int userId;
+public class UserLoginDTO {
     private String userName;
     private String password;
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public String getUserName() {
         return userName;
